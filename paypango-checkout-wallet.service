@@ -1,0 +1,10 @@
+[Unit]
+Description=Paypango Checkout Service.
+
+[Service]
+Type=simple
+User=paypango-checkout-wallet
+ExecStart=/bin/bash /opt/paypango/checkout-wallet/run.sh
+
+[Install]
+WantedBy=multi-user.target

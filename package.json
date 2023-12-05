@@ -1,0 +1,27 @@
+{
+  "name": "checkout-wallet",
+  "version": "1.0.0",
+  "description": "This repository is a Checkout application using Angular, NodeJs.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npm install && cd server && npm install && cd .. && cd client && npm install && node_modules/@angular/cli/bin/ng build -c development --watch",
+    "start": "node bin/www",
+    "start:dev": "nodemon bin/www",
+    "build": "npm install && cd server && npm install && cd .. && cd client && npm install && node_modules/@angular/cli/bin/ng build --prod",
+    "buildrpm": "npm install && cd server && npm install && cd .. && cd client && npm install && node_modules/@angular/cli/bin/ng build && cd .. && rpmbuild --target x86_64 -bb rpmbuild.spec",
+    "debug": "node --inspect-brk bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/sptproject/checkout"
+  },
+  "keywords": [
+    "Angular",
+    "NodeJS"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
