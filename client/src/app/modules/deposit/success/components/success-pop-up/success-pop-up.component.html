@@ -1,0 +1,34 @@
+<div class="success">
+
+  <generic-head></generic-head>
+
+  <div class="content">
+
+    <img src="../../../../../../assets/images/paypango-success-logo.svg" alt="success" />
+
+    <h3>{{ "paypangoWallet.success.title" | translate }}</h3>
+
+    <p>{{'deposit.success' | translate}}</p>
+
+    <div class="warning" routerLink="/paypango-wallet/payment-summary">
+      <img src="../../../../../../assets/images/warning.svg" alt="warning" />
+      <a>{{ "deposit.successSpan1" | translate }}</a><a>{{ "deposit.successSpan2"
+        | translate }}.</a>
+    </div>
+
+    <div class="warning-sm" routerLink="/paypango-wallet/payment-summary">
+      <img src="../../../../../../assets/images/warning.svg" alt="warning" />
+      <span>{{"deposit.successSpan1" | translate }}
+        <a>{{"deposit.successMobileSpan1" | translate }}</a>
+        {{"deposit.successMobileSpan2" | translate }}.</span>
+    </div>
+
+    <div class="company">
+      <small>{{ 'paypangoWallet.success.popUp.footerXl' | translate }}</small>
+
+      <small>{{ 'paypangoWallet.success.popUp.footerSm.span1' | translate }}<br />
+        {{ 'paypangoWallet.success.popUp.footerSm.span2' | translate }}</small>
+    </div>
+  </div>
+
+</div>

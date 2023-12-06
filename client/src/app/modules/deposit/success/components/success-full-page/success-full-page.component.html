@@ -1,0 +1,33 @@
+<mobilebghead [param]="mobilebghead"></mobilebghead>
+
+<div class="page-container">
+  <bghead></bghead>
+
+  <div class="success">
+    <generic-head></generic-head>
+
+    <div class="content">
+
+      <img src="../../../../../../assets/images/paypango-success-logo.svg" alt="success" />
+
+      <h3>{{ "deposit.title" | translate }}</h3>
+
+      <p>{{ "deposit.success" | translate }}</p>
+
+      <div class="warning" routerLink="/paypango-wallet/payment-summary">
+        <img src="../../../../../../assets/images/warning.svg" alt="warning" />
+        <a>{{ "deposit.successSpan1" | translate }}</a><a>{{ "deposit.successSpan2"
+          | translate }}.</a>
+      </div>
+
+      <div class="warning-sm" routerLink="/paypango-wallet/payment-summary">
+        <img src="../../../../../../assets/images/warning.svg" alt="warning" />
+        <span>{{"deposit.successSpan1" | translate }}
+          <a>{{"deposit.successMobileSpan1" | translate }}</a>
+          {{"deposit.successMobileSpan2" | translate }}.</span>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,137 @@
+@import "../../../../assets/styles/helpers/mixins";
+
+.success {
+  margin: 185px auto 310px auto;
+  width: 690px;
+  height: 654px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  position: relative;
+
+  @include screen-size("lg") {
+    width: 100%;
+    min-height: 654px;
+    height: 100%;
+  }
+
+  @include screen-size("sm") {
+    margin: 32px auto 152px auto;
+    max-width: 345px;
+    width: 100%;
+    min-height: 434px;
+    height: 100%;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15), 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 151px;
+
+    @include screen-size("sm") {
+      padding: 0 10px;
+      margin-top: 40px;
+    }
+
+    img {
+      width: 82px;
+      height: 70px;
+
+      @include screen-size("sm") {
+        width: 50px;
+        height: 46px;
+      }
+    }
+
+    h3 {
+      margin-top: 40px;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.41;
+      color: #2c2d45;
+
+      @include screen-size("sm") {
+        margin-top: 16px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+    }
+
+    p {
+      width: 344px;
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.33;
+      text-align: center;
+      color: #2c2d45;
+
+      @include screen-size("sm") {
+        max-width: 291px;
+        width: 100%;
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 1.43;
+      }
+    }
+
+    .warning {
+      margin-top: 59px;
+      display: flex;
+      align-items: center;
+
+      @include screen-size("sm") {
+        display: none;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      a {
+        text-decoration: underline;
+        cursor: pointer;
+        line-height: 1.43;
+        font-size: 14px;
+
+        &:first-child {
+          color: #091e42;
+        }
+
+        &:last-child {
+          margin-left: 8px;
+          color: #5e6c84;
+        }
+      }
+    }
+
+    .warning-sm {
+      display: none;
+
+      @include screen-size("sm") {
+        display: flex;
+        align-items: center;
+        margin-top: 62px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      span {
+        font-size: 12px;
+        line-height: 1.67;
+        color: #091e42;
+
+        a {
+          text-decoration: underline;
+          color: #007aff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
