@@ -1,0 +1,102 @@
+@import "../../../../assets/styles/helpers/mixins";
+.head {
+  display: flex;
+  justify-content: space-between;
+  height: 101px;
+  border-bottom: 1px solid rgba(53, 62, 84, 0.2);
+
+  @include screen-size("sm") {
+    height: 63px;
+  }
+
+  .logo {
+    padding: 30px 0 0 32px;
+    display: flex;
+
+    @include screen-size("sm") {
+      padding: 16px 0 7px 15px;
+    }
+
+    div {
+      height: 28px;
+      border-right: 2px solid #353e54;
+
+      @include screen-size("sm") {
+        height: 14px;
+        margin-top: 5px;
+      }
+    }
+
+    img {
+      height: 39px;
+      padding-right: 13px;
+
+      @include screen-size("sm") {
+        width: 117px;
+        height: 31px;
+        padding-right: 7px;
+      }
+    }
+
+    .text {
+      margin-top: 2px;
+      margin-left: 12px;
+      font-size: 19px;
+
+      @include screen-size("sm") {
+        font-size: 14px;
+        margin-top: 4px;
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+.head-popup {
+  height: 101px;
+  border-bottom: 1px solid rgba(53, 62, 84, 0.2);
+  display: flex;
+  background-color: #212529;
+  padding: 0 32px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  @include screen-size("sm") {
+    height: 63px;
+    padding: 16px 15px 7px 15px;
+  }
+
+  img {
+    height: 39px;
+    padding-right: 12px;
+
+    @include screen-size("sm") {
+      width: 117px;
+      height: 34px;
+      padding-right: 7px;
+    }
+  }
+
+  div {
+    height: 28px;
+    border-right: 2px solid #ffffff;
+    margin-top: 5px;
+
+    @include screen-size("sm") {
+      height: 14px;
+      margin-top: 8px;
+    }
+  }
+
+  .text {
+    margin-top: 6px;
+    margin-left: 12px;
+    font-size: 19px;
+    color: #ffffff;
+
+    @include screen-size("sm") {
+      font-size: 14px;
+      margin-top: 7px;
+      margin-left: 8px;
+    }
+  }
+}

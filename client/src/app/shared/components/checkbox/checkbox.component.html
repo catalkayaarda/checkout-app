@@ -1,0 +1,12 @@
+<div class="checkbox" (click)="handlerCheckbox()">
+
+  <div class="item" [class.active]="checkbox == true" [ngStyle]="{'width': boxStyle.width, 'height': boxStyle.height}">
+    <i class="fa fa-check"
+      [ngStyle]="{'fontSize': boxStyle.checkMark.fontSize, 'fontWeight': boxStyle.checkMark.fontWeight}"></i>
+  </div>
+
+  <label *ngIf="label"
+    [ngStyle]="{'margin-left': checkboxParam.marginLeft, 'font-size': checkboxParam.labelSize, 'font-weight': checkboxParam.labelWeight, 'line-height':checkboxParam.lineHeight,'color':checkboxParam.color,'width':checkboxParam.width}"
+    [innerHtml]="checkboxParam.labelText"></label>
+
+</div>

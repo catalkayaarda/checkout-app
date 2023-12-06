@@ -1,0 +1,10 @@
+<div class="checkout" *ngIf="!iframeAccessUrl">
+  <router-outlet></router-outlet>
+  <footer></footer>
+  <toast-message [param]="toastMessageParam"></toast-message>
+</div>
+
+<div class="checkout" *ngIf="iframeAccessUrl">
+  <router-outlet></router-outlet>
+  <toast-message [param]="toastMessageParam"></toast-message>
+</div>

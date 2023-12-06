@@ -1,0 +1,136 @@
+.smallSwitch {
+  position: relative;
+  width: 40px;
+  height: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(151, 151, 151, 0.2);
+  background-color: #ffffff;
+  transition: 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.on {
+    background-color: #44d7b6;
+  }
+
+  .switch-item {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #44d7b6;
+    transition: 0.5s;
+
+    &.on {
+      position: absolute;
+      left: 25px;
+      background-color: #ffffff;
+    }
+  }
+
+}
+
+.middleSwitch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 19px;
+  background-color: #6b778c;
+  transition: 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.on {
+    background-color: #00875a;
+  }
+
+  .switch-item {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: 0.5s;
+
+    &.on {
+      left: 22px;
+    }
+  }
+
+  .check {
+    position: absolute;
+    left: 4px;
+    top: -3px;
+    width: 15px;
+    height: 25px;
+    color: #ffffff;
+  }
+
+  .cross {
+    position: absolute;
+    left: 25px;
+    top: 2px;
+    width: 10px;
+    height: 15px;
+    color: #ffffff;
+  }
+}
+
+.bigSwitch {
+  position: relative;
+  width: 50px;
+  height: 18px;
+  border-radius: 8.8px;
+  background-color: #e4e4e4;
+  transition: 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.on {
+    background-color: #44d7b6;
+  }
+
+  .switch-item {
+    position: absolute;
+    left: -2px;
+    top: -3px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1.4px solid #e4e4e4;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      display: none;
+      color: #44d7b6;
+      font-size: 15px;
+    }
+
+    &.on {
+      left: 25px;
+      border: 1.4px solid #44d7b6;
+
+      i {
+        display: block;
+      }
+    }
+  }
+}

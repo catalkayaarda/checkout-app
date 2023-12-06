@@ -1,0 +1,21 @@
+@import "../../../../assets/styles/helpers/mixins";
+
+.container {
+  position: relative;
+
+  .bghead {
+    position: absolute;
+    top: 0;
+    width: 2200px;
+    height: 1100px;
+    background-color: #1748af;
+    border-bottom-left-radius: 150px;
+    transform: rotate(-18deg);
+    margin: -1000px auto 0 -350px;
+    z-index: -1;
+
+    @include screen-size("xl") {
+      display: none;
+    }
+  }
+}

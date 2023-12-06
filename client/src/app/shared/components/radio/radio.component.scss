@@ -1,0 +1,50 @@
+.greenClass {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #dadada;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    border: 1px solid #44d7b6;
+
+    div {
+      display: block;
+    }
+  }
+
+  div {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #44d7b6;
+  }
+}
+
+.orangeClass {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #979797;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+
+    div {
+      display: block;
+    }
+  }
+
+  div {
+    display: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ff5232;;
+  }
+}

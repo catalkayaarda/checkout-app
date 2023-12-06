@@ -1,0 +1,7 @@
+<div [ngClass]="{'smallSwitch': style === 'small', 'middleSwitch': style === 'middle', 'bigSwitch': style === 'big' }"
+  [class.on]="value == true" (click)="handlerSwitch()">
+  <div class="switch-item" [class.on]="value == true">
+  </div>
+  <img class="check" *ngIf="value == true" src="../../../../assets/images/check.svg" alt="check" />
+  <img class="cross" *ngIf="value == false" src="../../../../assets/images/cross.svg" alt="cross" />
+</div>

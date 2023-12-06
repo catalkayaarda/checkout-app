@@ -1,0 +1,13 @@
+<div class="head" *ngIf="!iframeAccessUrl">
+    <div class="logo">
+        <img src="../../../../assets/images/brand.svg" alt="brand" />
+        <div></div>
+        <span class="text">{{'public.login.paymentType.form.left' | translate}}</span>
+    </div>
+</div>
+
+<div class="head-popup" *ngIf="iframeAccessUrl">
+    <img src="../../../../assets/images/brand-logo-type-white.webp" alt="brand" />
+    <div></div>
+    <span class="text">{{'public.login.paymentType.form.left' | translate}}</span>
+</div>

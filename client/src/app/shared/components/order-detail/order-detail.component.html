@@ -1,0 +1,31 @@
+<div class="order" *ngIf="show" [ngStyle]="{'top': styles.top}">
+
+  <div class="header">
+    <ul>
+      <li>Ürün Adı</li>
+      <li>Adet</li>
+      <li>Tutar</li>
+    </ul>
+  </div>
+
+  <div class="content" [ngStyle]="{'height': styles.contentHeight}">
+    <ul *ngFor="let item of orderDetail">
+
+      <li>
+        <div><img src="{{item.image}}" alt="product" /></div>
+        <div>
+          <h5>{{item.title}}</h5>
+          <span>{{item.content}}</span>
+        </div>
+      </li>
+
+      <li>{{item.total}}</li>
+
+      <li>{{item.amount}}</li>
+
+      <li><span>Adet: {{item.total}}</span> <span>Tutar: {{item.amount}}</span> </li>
+
+    </ul>
+  </div>
+
+</div>

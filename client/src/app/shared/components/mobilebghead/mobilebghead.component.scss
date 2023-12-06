@@ -1,0 +1,17 @@
+@import "../../../../assets/styles/helpers/mixins";
+
+.mobile-bghead {
+  display: none;
+
+  @include screen-size("xl") {
+    display: block;
+    position: absolute;
+    top: 0;
+    max-width: 1110px;
+    width: 100%;
+    background-color: #1748af;
+    margin: 0 auto;
+    z-index: -1;
+    clip-path: polygon(0% 0%, 0% 100%, 50% 50%, 100% 100%, 100% 0%);
+  }
+}
