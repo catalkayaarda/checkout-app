@@ -1,0 +1,284 @@
+@import "../../../../../assets/styles/helpers/mixins";
+.head {
+  display: flex;
+  justify-content: space-between;
+  height: 101px;
+  border-bottom: 1px solid rgba(53, 62, 84, 0.2);
+
+  @include screen-size("sm") {
+    height: 63px;
+  }
+
+  .logo {
+    padding: 30px 0 0 32px;
+    display: flex;
+
+    @include screen-size("sm") {
+      padding: 16px 0 7px 0;
+    }
+
+    div {
+      height: 28px;
+      border-right: 2px solid #353e54;
+
+      @include screen-size("sm") {
+        height: 14px;
+        margin-top: 5px;
+      }
+    }
+
+    img {
+      height: 39px;
+      padding-right: 13px;
+
+      @include screen-size("sm") {
+        width: 117px;
+        height: 31px;
+        padding-right: 7px;
+      }
+    }
+
+    .text {
+      margin-top: 2px;
+      margin-left: 12px;
+      font-size: 19px;
+
+      @include screen-size("sm") {
+        font-size: 14px;
+        margin-top: 4px;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .customer {
+    padding: 17px 35px 18px 0;
+    text-align: right;
+
+    @include screen-size("sm") {
+      display: none;
+    }
+
+    span {
+      font-size: 13px;
+      line-height: 1.54;
+      color: #353e54;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #353e54;
+    }
+
+    .exit {
+      margin-top: 5px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      cursor: pointer;
+
+      div {
+        &:first-child {
+          a {
+            font-size: 11px;
+            color: #1748af;
+          }
+        }
+
+        &:last-child {
+          margin-top: 2px;
+          margin-left: 3px;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.head-customer-sm {
+  display: none;
+
+  @include screen-size("sm") {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(53, 62, 84, 0.2);
+
+    div {
+      &:first-child {
+        h6 {
+          font-size: 12px;
+          font-weight: 500;
+          color: #353e54;
+          margin-bottom: 5px;
+        }
+
+        span {
+          font-size: 12px;
+          color: #353e54;
+        }
+      }
+
+      &:last-child {
+        display: flex;
+        align-self: flex-end;
+
+        a {
+          margin-right: 3px;
+          font-size: 11px;
+          color: #1748af;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.customer-sm {
+  display: none;
+
+  @include screen-size("sm") {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 8px 0;
+    margin: 0 15px;
+    border-bottom: 1px solid rgba(53, 62, 84, 0.2);
+
+    div {
+      &:first-child {
+        h6 {
+          font-size: 12px;
+          font-weight: 500;
+          color: #353e54;
+          margin-bottom: 5px;
+        }
+
+        span {
+          font-size: 12px;
+          color: #353e54;
+        }
+      }
+
+      &:last-child {
+        display: flex;
+        align-self: flex-end;
+
+        a {
+          margin-right: 3px;
+          font-size: 11px;
+          color: #1748af;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.head-popup {
+  height: 101px;
+  border-bottom: 1px solid rgba(53, 62, 84, 0.2);
+  display: flex;
+  background-color: #212529;
+  padding: 0 32px;
+  justify-content: space-between;
+  @include screen-size("sm") {
+    height: 63px;
+    padding: 16px 15px 7px 15px;
+  }
+
+  .left {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    display: flex;
+
+    @include screen-size("sm") {
+      padding-top: 0;
+    }
+
+    img {
+      height: 39px;
+      padding-right: 12px;
+
+      @include screen-size("sm") {
+        width: 117px;
+        height: 34px;
+        padding-right: 7px;
+      }
+    }
+
+    div {
+      height: 28px;
+      border-right: 2px solid #ffffff;
+      margin-top: 5px;
+
+      @include screen-size("sm") {
+        height: 14px;
+        margin-top: 8px;
+      }
+    }
+
+    .text {
+      margin-top: 6px;
+      margin-left: 12px;
+      font-size: 19px;
+      color: #ffffff;
+
+      @include screen-size("sm") {
+        font-size: 14px;
+        margin-top: 7px;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .customer {
+    padding: 17px 0 18px 0;
+    text-align: right;
+
+    @include screen-size("sm") {
+      display: none;
+    }
+
+    span {
+      font-size: 13px;
+      line-height: 1.54;
+      color: #fff;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    .exit {
+      margin-top: 5px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 11px;
+
+      div {
+        &:first-child {
+          a {
+            font-size: 11px;
+            color: #fff;
+          }
+        }
+
+        &:last-child {
+          margin-top: 2px;
+          margin-left: 3px;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

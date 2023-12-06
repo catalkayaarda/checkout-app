@@ -1,0 +1,60 @@
+<div class="payment-type">
+
+  <div class="intro-container">
+
+    <div class="intro">
+      <img class="brand" src="../../../../../../../assets/images/brand-logo-type-white.webp" alt="brand" />
+    </div>
+
+  </div>
+
+  <div class="content-container">
+
+    <div class="content">
+
+      <div class="tab">
+        <ul>
+          <li [class.active]="activePaymentType == 1">
+            {{ 'public.login.paymentType.tab.first' | translate }}</li>
+
+        </ul>
+      </div>
+
+      <div class="form">
+
+        <div>
+          <paypango-wallet-login-popup [activePaymentType]="activePaymentType">
+          </paypango-wallet-login-popup>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="payment-type-sm">
+
+  <generic-head></generic-head>
+
+  <div class="content">
+
+    <div class="tab">
+      <ul>
+        <li [class.active]="activePaymentType == 1">
+          {{ 'public.login.paymentType.tab.first' | translate }}</li>
+
+      </ul>
+    </div>
+
+    <div class="form">
+
+      <paypango-wallet-login-popup [activePaymentType]="activePaymentType">
+      </paypango-wallet-login-popup>
+
+    </div>
+
+  </div>
+
+</div>

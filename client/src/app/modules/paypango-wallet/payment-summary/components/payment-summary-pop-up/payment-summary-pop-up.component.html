@@ -1,0 +1,99 @@
+<div class="payment-summary" [class.orderInformation]="orderInformation">
+
+  <wallet-head></wallet-head>
+
+  <div class="content">
+
+    <div class="company">
+
+      <div class="info">
+        <img src="../../../../assets/images/trendyol.png" alt="company-logo" />
+        <p>DSM Grup Danışmanlık İletişim ve Satış Ticaret A.Ş. Maslak Mahallesi Büyükdere Caddesi (Spine Plaza)
+          No:243 İç Kapı No:19 Sarıyer/İstanbul</p>
+      </div>
+
+      <div class="amount" *ngIf="!orderInformation">
+        <h4>{{ "paypangoWallet.paymentSummary.content.orderInfo.title" | translate }}</h4>
+
+        <div class="total">
+
+          <span class="value">{{ "paypangoWallet.paymentSummary.content.orderInfo.detailSm.total" | translate
+            }}:</span><span class="price">
+            {{amount | currency:'currency':'':'1.2-2' | currencyFormat}} 
+                        {{currency}}</span> <br />
+            <div (click)="orderDetailShow = !orderDetailShow">
+              <a>{{ "paypangoWallet.paymentSummary.content.orderInfo.detailSm.title" | translate }}</a>
+            <img class="image" src="../../../../assets/images/arrow-down.svg" alt="arrow-down" />
+          </div>
+        </div>
+
+        <order-detail [show]="orderDetailShow" [styles]="noDiscountStyle"></order-detail>
+
+      </div>
+
+    </div>
+
+    <div class="order-info" *ngIf="orderInformation">
+
+      <h3>{{ "paypangoWallet.paymentSummary.content.orderInfo.title" | translate }}</h3>
+
+      <div class="detail">
+
+        <div class="detail-sm" (click)="orderDetailShow = !orderDetailShow">
+          <span>{{ "paypangoWallet.paymentSummary.content.orderInfo.detailSm.title" | translate }}</span>
+          <img src="../../../../assets/images/arrow-down.svg" alt="arrow-down" [class.arrow-up]="orderDetailShow" />
+        </div>
+
+        <ul class="product-total">
+          <li>{{ "paypangoWallet.paymentSummary.content.orderInfo.productTotal" | translate }}</li>
+          <li>19.698 TL</li>
+        </ul>
+
+        <ul class="discount">
+          <li>{{ "paypangoWallet.paymentSummary.content.orderInfo.discount" | translate }}
+            <span>%10</span>
+          </li>
+          <li>-1900 TL</li>
+        </ul>
+        <hr />
+
+        <ul class="total">
+          <li (click)="orderDetailShow = !orderDetailShow">
+            {{ "paypangoWallet.paymentSummary.content.orderInfo.total.detail" | translate }} <img
+              src="../../../../assets/images/arrow-down.svg" alt="arrow-down" [class.arrow-up]="orderDetailShow" /></li>
+          <li> {{ "paypangoWallet.paymentSummary.content.orderInfo.total.total" | translate }}
+            <span>18.838,99 TL</span>
+          </li>
+        </ul>
+
+        <order-detail [show]="orderDetailShow" [styles]="orderDetailStyle"></order-detail>
+      </div>
+    </div>
+
+    <div class="payment-info" [class.orderInformation]="orderInformation" *ngIf="totalBalance>0">
+
+      <h3>{{ "paypangoWallet.paymentSummary.content.paymentInfo.title" | translate }}</h3>
+
+      <p>{{ "paypangoWallet.paymentSummary.content.paymentInfo.content" | translate }}</p>
+
+      <ul class="first-ul">
+        <li>
+          <span>{{ "paypangoWallet.paymentSummary.content.paymentInfo.lists.first.payment" | translate }}</span>
+          - {{currency}}
+          {{ "paypangoWallet.paymentSummary.content.paymentInfo.lists.first.balance" | translate }}
+        </li>
+
+        <li>{{totalBalance | currency:'currency':'':'1.2-2' | currencyFormat}} {{currency}}</li>
+      </ul>
+
+    </div>
+
+    <div class="buttons">
+      <button routerLink="/">{{ "paypangoWallet.paymentSummary.content.buttons.btn1" | translate }}</button>
+      <button (click)="sendData()">{{ "paypangoWallet.paymentSummary.content.buttons.btn2" |
+        translate }}</button>
+    </div>
+
+  </div>
+
+</div>

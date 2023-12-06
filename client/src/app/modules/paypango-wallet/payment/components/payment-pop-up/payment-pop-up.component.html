@@ -1,0 +1,158 @@
+<div class="payment" [class.orderInformation]="orderInformation">
+
+  <wallet-head></wallet-head>
+
+  <div class="content" [class.orderInformation]="orderInformation">
+
+    <div class="company">
+
+      <div class="info">
+        <img src="../../../../assets/images/trendyol.png" alt="company-logo" />
+        <p>DSM Grup Danışmanlık İletişim ve Satış Ticaret A.Ş. Maslak Mahallesi Büyükdere Caddesi (Spine Plaza)
+          No:243 İç Kapı No:19 Sarıyer/İstanbul</p>
+      </div>
+
+      <div class="amount" *ngIf="!orderInformation">
+        <h4>{{ "paypangoWallet.paymentSummary.content.orderInfo.title" | translate }}</h4>
+
+        <div class="total">
+          <span class="value">{{ "paypangoWallet.paymentSummary.content.orderInfo.detailSm.total" | translate
+            }}:</span><span class="price">
+            {{amountData | currency:'currency':'':'1.2-2' | currencyFormat}}
+            {{currency}}</span> <br />
+          <div (click)="orderDetailShow = !orderDetailShow">
+            <a>{{ "paypangoWallet.payment.content.company.amount.orderDetail" | translate }}</a>
+            <img class="image" [class.arrow-up]="orderDetailShow" src="../../../../assets/images/arrow-down.svg"
+              alt="arrow-down" />
+          </div>
+        </div>
+
+        <order-detail [show]="orderDetailShow" [styles]="noDiscountStyle"></order-detail>
+
+      </div>
+
+    </div>
+
+    <div class="order-info" *ngIf="orderInformation">
+
+      <h3>{{ "paypangoWallet.payment.content.orderInfo.title" | translate }}</h3>
+
+      <div class="detail">
+
+        <div class="detail-sm" (click)="orderDetailShow = !orderDetailShow">
+          <span>{{ "paypangoWallet.payment.content.orderInfo.detailSm.title" | translate }}</span>
+          <img src="../../../../assets/images/arrow-down.svg" alt="arrow-down" [class.arrow-up]="orderDetailShow" />
+        </div>
+
+        <ul class="product-total">
+          <li>{{ "paypangoWallet.payment.content.orderInfo.productTotal" | translate }}</li>
+          <li>19.698 TL</li>
+        </ul>
+
+        <ul class="discount">
+          <li>{{ "paypangoWallet.payment.content.orderInfo.discount" | translate }} <span>%10</span></li>
+          <li>-1900 TL</li>
+        </ul>
+
+        <hr />
+
+        <ul class="total">
+          <li (click)="orderDetailShow = !orderDetailShow">
+            {{ "paypangoWallet.payment.content.orderInfo.total.detail" | translate }} <img
+              src="../../../../assets/images/arrow-down.svg" alt="arrow-down" [class.arrow-up]="orderDetailShow" /></li>
+          <li>{{ "paypangoWallet.payment.content.orderInfo.total.total" | translate }}: <span>18.838,99 TL</span>
+          </li>
+        </ul>
+
+        <order-detail [show]="orderDetailShow" [styles]="orderDetailStyle"></order-detail>
+      </div>
+    </div>
+
+    <form class="deposit-money" #form="ngForm" (ngSubmit)="submitForm(form)">
+      <h3>{{ "paypangoWallet.payment.content.depositMoney.title" | translate }}</h3>
+
+      <p>{{ "paypangoWallet.payment.content.depositMoney.content.first" | translate }}
+        <span>{{ "paypangoWallet.payment.content.depositMoney.content.second" | translate }} </span>
+        {{ "paypangoWallet.payment.content.depositMoney.content.third" | translate }}
+      </p>
+
+      <div class="inputs">
+
+        <div class="item">
+          <input [ngModel]="cardInfo.card_holder | titlecase" type="text" id="fhold"
+            (ngModelChange)="updateCardHolder($event)"
+            placeholder="{{ 'paypangoWallet.payment.content.depositMoney.form.item1.placeholder' | translate }}"
+            name="fhold" #cardHolder="ngModel" autocomplete="fhold" required />
+          <label>{{ "paypangoWallet.payment.content.depositMoney.form.item1.label" | translate }}</label>
+
+        </div>
+
+        <div class="item">
+          <div class="card">
+            <div>
+              <input [(ngModel)]="cardInfo.card_number" type="text" id="fnumber" inputmode="numeric" class="card-number"
+                (paste)="onPaste($event)" (keypress)="handlerCardNumber($event)" (input)="onInput(cardNumber.value)"
+                placeholder="{{ 'paypangoWallet.payment.content.depositMoney.form.item2.card1.placeholder' | translate }}"
+                name="fnumber" #cardNumber="ngModel" minlength="17" maxlength="19" autocomplete="fnumber" required />
+              <label>{{ "paypangoWallet.payment.content.depositMoney.form.item2.card1.label" | translate
+                }}</label>
+
+              <img class="card-type" *ngIf="cardImg" [src]="cardImg" alt="credit-card">
+            </div>
+
+            <div>
+              <input [ngModel]="cardInfo.card_exp_date" type="text" id="fexpire" inputmode="numeric"
+                placeholder="{{ 'paypangoWallet.payment.content.depositMoney.form.item2.card2.placeholder' | translate }}"
+                (ngModelChange)="expireDateChange($event)" (keypress)="handlerCardExpDate($event)" name="fexpire"
+                #cardExpdate="ngModel" maxlength="5" minlength="5" autocomplete="fexpire" required />
+              <label>{{ "paypangoWallet.payment.content.depositMoney.form.item2.card2.label" | translate
+                }}</label>
+            </div>
+
+            <div>
+              <input (keypress)="handlerCardCvc($event)" [(ngModel)]="cardInfo.cvc" type="text" id="fsecret"
+                inputmode="numeric"
+                placeholder="{{ 'paypangoWallet.payment.content.depositMoney.form.item2.card3.placeholder' | translate }}"
+                maxlength="3" minlength="3" name="fsecret" #cvc="ngModel" autocomplete="fsecret" required />
+              <label>{{ "paypangoWallet.payment.content.depositMoney.form.item2.card3.label" | translate
+                }}</label>
+            </div>
+
+          </div>
+        </div>
+        <div class="validation" [ngStyle]="{'visibility': form.submitted ? 'visible' : 'hidden'}">
+          <span
+            *ngIf="cardHolder.errors?.required || cardNumber.errors?.required || cardNumber.errors?.required || cvc.errors?.required || !luhnCheckControl || checkExpDate ">
+            {{'paypangoWallet.payment.content.depositMoney.form.validation' | translate }}</span>
+        </div>
+
+        <div class="item">
+          <span>{{ "paypangoWallet.payment.content.depositMoney.form.item3.desc" | translate }}</span>
+          <div class="amount">
+            <label>{{ "paypangoWallet.payment.content.depositMoney.form.item3.label" | translate }}</label>
+            <input type="text" [(ngModel)]="amount" inputmode="decimal"
+              placeholder="{{ 'paypangoWallet.payment.content.depositMoney.form.item3.placeholder' | translate }}"
+              name="fAmount" #famount="ngModel" maxlength="19" currencyMask autocomplete="off" required />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="validation"
+        [ngStyle]="{'visibility': form.submitted && famount.errors?.required ? 'visible' : 'hidden'}">
+        <span>
+          {{ 'paypangoWallet.payment.content.depositMoney.form.item3.validation.required' | translate }}</span>
+      </div>
+
+      <div class="buttons">
+        <button routerLink="/">{{ "paypangoWallet.payment.content.depositMoney.form.buttons.btn1" | translate
+          }}</button>
+        <button type="submit">{{
+          "paypangoWallet.payment.content.depositMoney.form.buttons.btn2" | translate }}</button>
+      </div>
+    </form>
+
+
+  </div>
+
+</div>

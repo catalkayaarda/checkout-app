@@ -1,0 +1,43 @@
+<mobilebghead [param]="mobilebghead"></mobilebghead>
+
+<div class="page-container">
+  <bghead></bghead>
+
+  <div class="payment-type">
+
+    <generic-head></generic-head>
+
+    <div class="content" [class.content-cardPayment]="activePaymentType == 2">
+
+      <div class="tab">
+        <ul>
+          <li (click)="handlerChangeTab(1)" [class.active]="activePaymentType == 1">
+            {{ 'public.login.paymentType.tab.first' | translate }}</li>
+        </ul>
+      </div>
+
+      <div class="form" [class.cardPayment]="activePaymentType == 2">
+
+        <div>
+          <paypango-wallet-login [activePaymentType]="activePaymentType"></paypango-wallet-login>
+
+        </div>
+
+        <div class="line" *ngIf="activePaymentType==1">
+          <hr />
+        </div>
+
+        <div class="right" *ngIf="activePaymentType==1">
+          <div>
+            <span>{{ 'public.login.paymentType.form.right' | translate }}</span>
+            <img class="line" src="../../../../../assets/images/line.svg" />
+          </div>
+
+          <img class="paypango-right" src="../../../../../assets/images/paypango-success-logo.svg" alt="paypango" />
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

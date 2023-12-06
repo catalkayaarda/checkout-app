@@ -1,0 +1,90 @@
+<div class="phone" *ngIf="activePaymentType == 1">
+  <h3>{{ "public.login.paypangoWalletLogin.title" | translate }}</h3>
+
+  <form #form="ngForm" (ngSubmit)="submitForm(form)">
+
+    <div class="item">
+      <label>{{ "public.login.paypangoWalletLogin.form.item1.label" | translate }}</label>
+
+      <div class="phone-input">
+        <input type="text" [ngModel]="user.phoneNumber" class="phone"
+          [class.higher-padding]="selectedDialCode.dial_code.length>=4" (ngModelChange)="phoneNumberInput($event)"
+          placeholder="538 000 1232" inputmode="numeric" name="phoneNumber" #phoneValidation="ngModel"
+          autocomplete="off" maxlength="19" required numbersOnly />
+
+        <p class="dial-code">{{selectedDialCode.dial_code}}</p>
+
+        <div class="selected-country" *ngIf="countries" (click)="showCountries()">
+          <span class="flag-icon flag-icon-{{selectedDialCode.code.toLowerCase()}} flag-icon-squared"></span>
+          <img class="arrow" src="../../../../../assets/images/arrow-down.svg" alt="arrow-down"
+            [ngStyle]="{'transform': showDropdown ? 'rotate(180deg)' : 'rotate(0deg)'}" />
+        </div>
+
+        <ul class="country-dropdown" *ngIf="showDropdown">
+
+          <div class="country-search-bar">
+            <img src="../../../../../../assets/images/icons-search.svg" alt="search-icon" />
+
+            <input type="text" [(ngModel)]="searchKeyword"
+              placeholder="{{ 'public.login.paypangoWalletLogin.form.item1.searchPlaceholder' | translate }}"
+              name="searchCountry" autocomplete="off" />
+
+          </div>
+
+          <ng-container *ngIf="(countries | searchBar: searchKeyword) as filteredCountries">
+
+            <li *ngFor="let country of countries | searchBar: searchKeyword" class="country"
+              (click)="selectDialCode(country)">
+              <span class="flag-icon flag-icon-{{country.code.toLowerCase()}} flag-icon-squared"></span>
+              <p>{{country.name}} ({{country.dial_code}})</p>
+            </li>
+
+            <p class="no-result" *ngIf="!filteredCountries.length">
+              {{ 'public.login.paypangoWalletLogin.form.item1.searchResult' | translate }}
+            </p>
+
+          </ng-container>
+
+        </ul>
+
+      </div>
+      <div class="validation" [ngStyle]="{'visibility': form.submitted ? 'visible' : 'hidden'}">
+        <span *ngIf="phoneValidation.errors?.required">{{
+          'public.login.paypangoWalletLogin.form.item1.validation.required' | translate
+          }}</span>
+        <span *ngIf="!phoneValidation.errors?.required && !phoneValidate">{{
+          'public.login.paypangoWalletLogin.form.item1.validation.phoneValidate' | translate }}</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <label>{{ "public.login.paypangoWalletLogin.form.item2.label" | translate }}</label>
+      <input type="password" placeholder="*************" #password="ngModel" [(ngModel)]="user.password"
+        inputmode="numeric" name="fPassword" minlength="6" maxlength="6" autocomplete="off" numbersOnly required />
+
+      <div class="validation" [ngStyle]="{ visibility: form.submitted && password.invalid ? 'visible' : 'hidden' }">
+        <span *ngIf="password.errors?.required">
+          {{"public.login.paypangoWalletLogin.form.item2.validation.required" | translate }}
+        </span>
+
+        <span *ngIf="password.errors?.minlength">
+          {{"public.login.paypangoWalletLogin.form.item2.validation.minLength" | translate }}
+        </span>
+
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="submit">
+        {{ "public.login.paypangoWalletLogin.form.buttons.btn1" | translate }}
+      </button>
+
+    </div>
+
+    <div class="account">
+      <span>{{ "public.login.paypangoWalletLogin.account.questions" | translate }}
+        <a target="_blank" href="https://dev-wallet.paypango.com/public/register">{{
+          "public.login.paypangoWalletLogin.account.create" | translate }}</a></span>
+    </div>
+  </form>
+</div>

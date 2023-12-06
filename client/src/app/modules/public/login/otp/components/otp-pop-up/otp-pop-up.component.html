@@ -1,0 +1,72 @@
+<div class="otp">
+
+  <generic-head></generic-head>
+  <form class="content" #form="ngForm" (ngSubmit)="submitForm(form)">
+    <h3>{{ "public.otp.title" | translate }}</h3>
+    <p>{{phoneNumber | phoneMask}} {{ "public.otp.content" | translate }}</p>
+
+    <div class="code">
+      <div class="item" [class.fill]="formData.code1" (click)="handleInputFocus(elementRef1, 1)">
+        <input type="text" [(ngModel)]="formData.code1" name="fCode1" #code1="ngModel" minlength="1" maxlength="1"
+          #formDataCode1 (keyup)="onFocusInput($event)" autofocus autocomplete="off" numbersOnly required />
+      </div>
+
+      <div class="item" [class.fill]="formData.code2" (click)="handleInputFocus(elementRef2, 2)">
+        <input type="text" [(ngModel)]="formData.code2" name="fCode2" #code2="ngModel" minlength="1" maxlength="1"
+          #formDataCode2 (keyup)="onFocusInput($event)" autocomplete="off" numbersOnly required />
+      </div>
+
+      <div class="item" [class.fill]="formData.code3" (click)="handleInputFocus(elementRef3, 3)">
+        <input type="text" [(ngModel)]="formData.code3" name="fCode3" #code3="ngModel" minlength="1" maxlength="1"
+          #formDataCode3 (keyup)="onFocusInput($event)" autocomplete="off" numbersOnly required />
+      </div>
+
+      <div class="item" [class.fill]="formData.code4" (click)="handleInputFocus(elementRef4, 4)">
+        <input type="text" [(ngModel)]="formData.code4" name="fCode4" #code4="ngModel" minlength="1" maxlength="1"
+          #formDataCode4 (keyup)="onFocusInput($event)" autocomplete="off" numbersOnly required />
+      </div>
+
+      <div class="item" [class.fill]="formData.code5" (click)="handleInputFocus(elementRef5, 5)">
+        <input type="text" [(ngModel)]="formData.code5" name="fCode5" #code5="ngModel" minlength="1" maxlength="1"
+          #formDataCode5 (keyup)="onFocusInput($event)" autocomplete="off" numbersOnly required />
+      </div>
+
+      <div class="item" [class.fill]="formData.code6" (click)="handleInputFocus(elementRef6, 6)">
+        <input type="text" [(ngModel)]="formData.code6" name="fCode6" #code6="ngModel" minlength="1" maxlength="1"
+          #formDataCode6 (keyup)="onFocusInput($event)" autocomplete="off" numbersOnly required />
+      </div>
+    </div>
+
+    <div class="time">
+      <span>{{ "public.otp.time" | translate }} <span>{{counter|counter}}</span></span>
+    </div>
+
+    <div class="sms">
+      <span>
+        {{ "public.otp.sms.questions" | translate }} <span (click)="sendRepeatCode()">{{ "public.otp.sms.againSend" |
+          translate}}</span></span>
+
+      <div class="validation" [ngStyle]="{ visibility:sendRepeatRequest && counter>=60 ? 'visible' : 'hidden' }">
+        {{"public.otp.validation.resend" | translate}}
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="submit">{{ "public.otp.button" | translate }}</button>
+
+      <button routerLink="/">
+        <img src="../../../../../../../assets/images/arrow-left.svg" alt="arrow-left" />
+        {{ "public.otp.popUp.buttonBack" | translate }}
+      </button>
+
+    </div>
+    <div class="validation" [ngStyle]="{ visibility: form.submitted ? 'visible' : 'hidden' }">
+      <span
+        *ngIf="code1.errors?.required || code2.errors?.required || code3.errors?.required || code4.errors?.required || code5.errors?.required || code6.errors?.required">{{
+        "public.otp.validation.required" | translate
+        }}</span>
+      <span *ngIf="form.valid && counter == 0">{{ "public.otp.validation.time" | translate }}</span>
+    </div>
+  </form>
+
+</div>

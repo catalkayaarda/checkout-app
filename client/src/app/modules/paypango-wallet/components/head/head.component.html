@@ -1,0 +1,54 @@
+<div class="head" *ngIf="!iframeAccessUrl">
+    <div class="logo">
+        <img src="../../../../../assets/images/brand.svg" alt="brand" />
+        <div></div>
+        <span class="text">{{'public.login.paymentType.form.left' | translate}}</span>
+    </div>
+
+    <div class="customer">
+        <span>{{ "paypangoWallet.payment.welcome" | translate }}</span>
+        <h3>{{user.full_name}}</h3>
+        <div class="exit" (click)="handlerExit()">
+            <div> <a>{{ "paypangoWallet.payment.exit" | translate }}</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="head-customer-sm" *ngIf="!iframeAccessUrl">
+
+    <div>
+        <h6>{{ "paypangoWallet.payment.welcome" | translate }}</h6>
+        <span>{{user.full_name}}</span>
+    </div>
+
+    <div>
+        <a>{{ "paypangoWallet.payment.exit" | translate }}</a>
+    </div>
+
+</div>
+
+<div class="head-popup" *ngIf="iframeAccessUrl">
+    <div class="left">
+        <img src="../../../../../assets/images/brand-logo-type-white.webp" alt="brand" />
+        <div></div>
+        <span class="text">{{'public.login.paymentType.form.left' | translate}}</span>
+    </div>
+    <div class="customer">
+        <span>{{ "paypangoWallet.payment.welcome" | translate }}</span>
+        <h3>{{user.full_name}}</h3>
+        <a class="exit" (click)="handlerExit()">{{ "paypangoWallet.payment.exit" | translate }}</a>
+    </div>
+</div>
+
+<div class="customer-sm" *ngIf="iframeAccessUrl">
+
+    <div>
+        <h6>{{ "paypangoWallet.paymentSummary.welcome" | translate }}</h6>
+        <span>{{user.full_name}}</span>
+    </div>
+
+    <div>
+        <a (click)="handlerExit()"> {{ "paypangoWallet.paymentSummary.exit" | translate }}</a>
+    </div>
+
+</div>
