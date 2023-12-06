@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Rubik";
+}
+
+body {
+  overflow-x: hidden;
+}
+
+div,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+table {
+  border-spacing: 0;
+}
+
+:focus {
+  outline: none;
+}

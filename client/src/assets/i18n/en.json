@@ -1,0 +1,247 @@
+{
+  "public": {
+    "login": {
+      "paymentType": {
+        "tab": {
+          "first": "paypango Cüzdan",
+          "second": "Hızlı Cüzdan",
+          "third": "Kart İle Ödeme"
+        },
+        "form": {
+          "right": "‘’paypango’’",
+          "left": "cüzdan ile ödeme"
+        },
+        "popUp": {
+          "left": "‘’paypango’’"
+        }
+      },
+      "paypangoWalletLogin": {
+        "title": "Hesabınıza giriş yapınız.",
+        "form": {
+          "item1": {
+            "label": "Telefon Numaranız",
+            "validation": {
+              "required": "Lütfen cep numaranızı giriniz",
+              "phoneValidate": "Hatalı telefon numarası"
+            },
+            "searchResult": "Sonuç Bulunamadı",
+            "searchPlaceholder": "Ülke Ara"
+          },
+          "item2": {
+            "label": "Şifreniz",
+            "validation": {
+              "required": "Lütfen parolanızı giriniz",
+              "minLength": "En az 6 karakterden oluşmalıdır"
+            }
+          },
+          "buttons": {
+            "btn1": "GİRİŞ YAP"
+          }
+        },
+        "account": {
+          "questions": "Hesabınız yok mu?",
+          "create": "Hesap Oluştur"
+        }
+      }
+    },
+    "otp": {
+      "title": "Güvenlik Kodunu Gir",
+      "content": "numaralı telefonunuza gönderilen 6 haneli doğrulama kodunu giriniz.",
+      "time": "Kalan Süre",
+      "sms": {
+        "questions": "SMS kodu ulaşmadı mı?",
+        "againSend": "Yeniden Gönder"
+      },
+      "button": "DEVAM",
+      "popUp": {
+        "buttonBack": "GERİ"
+      },
+      "validation": {
+        "required": "Lütfen doğru kodu giriniz",
+        "time": "Geçerli sürede giriş yapamadınız",
+        "resend": "1 dakika dolduğunda tekrar deneyin"
+      },
+      "toastMessage": {
+        "error": {
+          "title": "Şifrenizin kullanım süresi dolmuştur",
+          "subtitle": "Lütfen tekrar deneyiniz..."
+        }
+      }
+    }
+  },
+  "paypangoWallet": {
+    "paymentSummary": {
+      "welcome": "Hoş Geldiniz,",
+      "exit": "Çıkış Yap",
+      "content": {
+        "company": {
+          "amount": {
+            "total": "Toplam",
+            "orderDetail": "Sipariş Detayı"
+          }
+        },
+        "orderInfo": {
+          "title": "Sipariş Bilgileri",
+          "detailSm": {
+            "total": "Toplam",
+            "title": "Sipariş Detayı"
+          },
+          "productTotal": "Ürün Toplamı",
+          "discount": "paypango indirimi",
+          "total": {
+            "detail": "Sipariş Detayı",
+            "total": "Toplam"
+          }
+        },
+        "paymentInfo": {
+          "title": "Ödeme Bilgileri",
+          "content": "TRY bakiyenizin yetersiz olması halinde diğer bakiyelerden anlık kur çevirisi yapılarak ödeme işlemi yapılacaktır.",
+          "lists": {
+            "first": {
+              "payment": "Ödeme Aracı",
+              "balance": "Bakiyeniz"
+            },
+            "second": "USD Hesabı",
+            "third": "EURO Hesabı",
+            "fourth": "GBP Hesabı"
+          }
+        },
+        "buttons": {
+          "btn1": "VAZGEÇ",
+          "btn2": "ÖDEME YAP"
+        }
+      }
+    },
+    "payment": {
+      "welcome": "Hoş Geldiniz,",
+      "exit": "Çıkış Yap",
+      "content": {
+        "company": {
+          "amount": {
+            "total": "Toplam",
+            "orderDetail": "Sipariş Detayı"
+          }
+        },
+        "orderInfo": {
+          "title": "Sipariş Bilgileri",
+          "detailSm": {
+            "title": "Sipariş Detayı"
+          },
+          "productTotal": "Ürün Toplamı",
+          "discount": "paypango indirimi",
+          "total": {
+            "detail": "Sipariş Detayı",
+            "total": "Toplam"
+          }
+        },
+        "depositMoney": {
+          "title": "Anında Para Yükle",
+          "content": {
+            "first": "Kredi kartı bilgilerinizi girerek paypango cüzdanınıza anında para yükleyebilir, alışverişinizde",
+            "second": "%2 paypango indirimini",
+            "third": "hemen kullanabilirsiniz."
+          },
+          "form": {
+            "item1": {
+              "label": "Adı Soyadı",
+              "placeholder": "Adı Soyadı"
+            },
+            "item2": {
+              "card1": {
+                "label": "Kredi Kartı Numarası",
+                "placeholder": "Kredi Kartı Numarası"
+              },
+              "card2": {
+                "label": "Son K. Tarihi",
+                "placeholder": "MM/YY"
+              },
+              "card3": {
+                "label": "Güvenlik K.",
+                "placeholder": "CVC"
+              }
+            },
+            "item3": {
+              "desc": "Alışveriş tutarınızdan daha düşük bir tutar yükleyemezsiniz.",
+              "label": "Yüklenecek Tutar",
+              "placeholder": "18.839,99 TL"
+            },
+            "buttons": {
+              "btn1": "VAZGEÇ",
+              "btn2": "PARA YÜKLE"
+            },
+            "validation": "Hatalı veya eksik kart bilgisi"
+          }
+        }
+      }
+    },
+    "paymentWaiting": {
+      "title": "Ödemeniz Alınıyor",
+      "content": "Ödeme işleminiz alınıyor. Lütfen onaylanana kadar pencereyi kapatmayın.",
+      "popUp": {
+        "footerXl": "Tüm Hakları Saklıdır. © SPT Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+        "footerSm": {
+          "span1": "Tüm Hakları Saklıdır.",
+          "span2": "SPT Elektronik Para ve Ödeme Hizmetleri A.Ş."
+        }
+      }
+    },
+    "success": {
+      "title": "Tebrikler",
+      "content": "Tebrikler ödemeniz başarıyla alındı, sayfaya yönlendiriliyorsunuz. Lütfen bekleyin.",
+      "warning": {
+        "link": {
+          "first": "Yönlendirilmediyseniz",
+          "second": "tıklayarak devam edebilirsiniz."
+        }
+      },
+      "warningSm": {
+        "info": {
+          "first": "Yönlendirilmediyseniz",
+          "second": "ulaşabilirsiniz"
+        },
+        "link": "buradan"
+      },
+      "popUp": {
+        "footerXl": "Tüm Hakları Saklıdır.© SPT Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+        "footerSm": {
+          "span1": "Tüm Hakları Saklıdır.",
+          "span2": "SPT Elektronik Para ve Ödeme Hizmetleri A.Ş."
+        }
+      }
+    },
+    "fail": {
+      "title": "Ödemeniz Alınamadı",
+      "errorGeneric": "Ödeme işleminiz şu an gerçekleştirilemedi.",
+      "content": "Lütfen müşteri hizmetleri ile iletişime geçin.",
+      "btn": "YARDIM",
+      "popUp": {
+        "footerXl": "Tüm Hakları Saklıdır.© SPT Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+        "footerSm": {
+          "span1": "Tüm Hakları Saklıdır.",
+          "span2": "SPT Elektronik Para ve Ödeme Hizmetleri A.Ş."
+        }
+      }
+    }
+  },
+  "footerTop": "SPT Elektronik Para ve Ödeme Sistemleri A.Ş.",
+  "footerBottom": "Tüm Hakları Saklıdır.© SPT Elektronik Para ve Ödeme Hizmetleri A.Ş.",
+  "footerPdf": {
+    "first": "Kullanım Sözleşmesi",
+    "second": "Gizlilik-Politikası",
+    "third": "KVKK"
+  },
+
+  "deposit": {
+    "title": "Tebrikler",
+    "success": "Tebrikler ödemeniz başarıyla alındı, sayfaya yönlendiriliyorsunuz. Lütfen bekleyin.",
+    "successSpan1": "Yönlendirilmediyseniz",
+    "successSpan2": "tıklayarak devam edebilirsiniz.",
+    "successMobileSpan1": "buradan",
+    "successMobileSpan2": "ulaşabilirsiniz.",
+    "fail": "Ödeme işleminiz şu an gerçekleştirilemedi. Lütfen müşteri hizmetleri ile iletişime geçin."
+  },
+  "toastMessage": {
+    "exitTitle": "Çıkış yapılıyor.",
+    "wait": "Lütfen bekleyiniz"
+  }
+}

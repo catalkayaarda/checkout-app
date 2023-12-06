@@ -1,0 +1,83 @@
+@import './variables';
+
+@mixin screen-size($breakpoint) {
+  @if ($breakpoint == 'sm') {
+    @media (max-width: $breakpoint-small) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'md') {
+    @media (max-width: $breakpoint-medium) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'lg') {
+    @media (max-width: $breakpoint-large) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'xl') {
+    @media (max-width: $breakpoint-xlarge) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'xxl') {
+    @media (max-width: $breakpoint-xxlarge) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == 'min-xxl') {
+    @media (min-width: $breakpoint-xxlarge) {
+      @content;
+    }
+  }
+}
+
+@mixin fontspec($size, $weight, $height, $spacing, $color) {
+  @if $size != '' {
+    font-size: $size;
+  }
+  @if $weight != '' {
+    font-weight: $weight;
+  }
+  @if $height != '' {
+    line-height: $height;
+  }
+  @if $spacing != '' {
+    letter-spacing: $spacing;
+  }
+  @if $color != '' {
+    color: $color;
+  }
+}
+
+@mixin animateAccordion($height, $marginStart, $marginEnd, $component) {
+  @if ($marginStart != '' and $marginEnd != '') {
+    @keyframes animationAccordionOpenBottom-#{$component} {
+      0% {
+        height: 0;
+        margin-top: $marginStart;
+      }
+
+      100% {
+        margin-top: $marginEnd;
+        height: $height;
+      }
+    }
+  } @else {
+    @keyframes animationAccordionOpenTop-#{$component} {
+      0% {
+        height: 0;
+      }
+
+      100% {
+        height: $height;
+      }
+    }
+  }
+}

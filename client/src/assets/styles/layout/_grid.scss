@@ -1,0 +1,23 @@
+@import "../helpers/mixins";
+
+.page-container {
+  width: 1105px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+
+  @include screen-size("xl") {
+    width: 820px;
+  }
+
+  @include screen-size("lg") {
+    width: 576px;
+  }
+
+  @include screen-size("sm") {
+    min-width: 280px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
